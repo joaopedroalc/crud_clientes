@@ -1,0 +1,166 @@
+html{
+  background-color: #000;
+  color: #fff;
+}
+
+h1{
+  text-align: center;
+}
+.container{
+  width: 80vw;
+  margin: 0 auto;
+}
+.button {
+  background-color: #32cd32;
+  color: #fff;
+  font-size: 30px;
+  border:none;
+  border-radius: 2em;
+  padding: 5px 15px;
+  margin: 2rem 0;
+}
+
+.campos{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #CC9500;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 1em;
+}
+
+.campos span{
+  font-size:30px;
+}
+
+.infos-escondidas{
+  display:none;
+  visibility: hidden;
+}
+
+.infos-escondidas.aparece{
+  display:grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  width: 100%;
+  visibility:visible;
+}
+
+.remover{
+  display:none;
+  visibility:hidden;
+}
+
+.lixeira{
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  display: inline;
+}
+
+.linha{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.modal{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: #00000090;
+  opacity: 0;
+  z-index: -1;
+}
+
+.modal.active{
+  opacity: 1;
+  z-index: 1;
+}
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  width: 50vw;
+  margin: 15vh auto;
+  padding-bottom: 20px;
+  background-color: white;
+  box-shadow: 1px 1px 10px black;
+}
+
+.modal-header{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1rem;
+}
+
+.modal-close{
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.modal-close:hover{
+  background-color: #FF4949;
+  color: white;
+}
+
+.modal-form{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.modal-field{
+  width: calc(50% - 10px);
+  height: 40px;
+  outline-style: none;
+  border-style: none;
+  box-shadow: 0 0 2px black;
+  padding: 0 10px;
+  font-size:1rem;
+}
+
+.modal-field:focus{
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 3px var(--primary-color);
+}
+
+
+.modal-footer{
+  background-color: inherit;
+  text-align: right;
+  padding: 0 20px;
+}
+
+@media (max-width:480px){
+  .modal{
+      top:100%;
+      transition: all 1s ease;
+  }
+  .modal.active{
+      top:0;
+  }
+  .modal-content{
+      margin:0;
+      width:100%;
+      position:fixed;
+  }
+  .modal-field{
+      width:100%;
+  }
+}
